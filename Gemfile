@@ -10,6 +10,16 @@ end
 gem 'devise'
 # bootstrapping
 gem 'bootstrap-generators'
+# jQuery
+gem 'jquery-rails'
+# relational mapping
+gem "rails-erd"
+# bootstrap generator
+gem 'bootstrap-generators'
+
+
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 # Use postgresql as the database for Active Record

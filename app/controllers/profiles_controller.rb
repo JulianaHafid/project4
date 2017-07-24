@@ -14,6 +14,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
+
     @profile = Profile.new
   end
 
@@ -25,6 +26,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    @profile.user_id = current_user.id
 
     respond_to do |format|
       if @profile.save
@@ -56,7 +58,7 @@ class ProfilesController < ApplicationController
   def destroy
     @profile.destroy
     respond_to do |format|
-      format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
+      format.html { redirect_to profiles_url, notice: 'Profile was successfully deleted.' }
       format.json { head :no_content }
     end
   end
