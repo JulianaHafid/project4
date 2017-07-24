@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  initiated_by: MyString
   seeker_id: 1
   helper_id: 1
+  task_list: MyString
 
 two:
+  initiated_by: MyString
   seeker_id: 1
   helper_id: 1
+  task_list: MyString

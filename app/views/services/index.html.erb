@@ -19,7 +19,7 @@
     </thead>
 
     <tbody>
-      <%= content_tag_for(:tr, @services) do |service| %>
+      <% @services.each do |service| %>
             <td><%= service.seeker_id %></td>
             <td><%= service.helper_id %></td>
             <td><%= link_to 'Show', service %></td>
