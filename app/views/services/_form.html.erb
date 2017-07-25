@@ -15,29 +15,22 @@
   <div class="form-group">
     <%= f.label :initiated_by, class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
-      <%= f.number_field :initiated_by, class: "form-control" %>
+      <%= f.text_field :initiated_by, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :seeker_id, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.number_field :seeker_id, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :helper_id, class: "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.number_field :helper_id, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= label_tag 'task_babysit', 'Babysitting' %>
+    <%= label_tag 'task_babysit', 'Babysitting', class: "col-sm-3 control-label"  %>
+    <div class="col-sm-1">
     <%= check_box_tag 'service[task_list][]', 'Babysitting', checked('Babysitting'), id: 'task_babysit' %>
+    </div>
 
-    <%= label_tag 'task_householdchores', 'Household Chores' %>
+    <%= label_tag 'task_householdchores', 'Household Chores' , class: "col-sm-2 control-label"%>
+    <div class="col-sm-1">
     <%= check_box_tag 'service[task_list][]', 'Household Chores', checked('Household Chores'), id: 'task_householdchores' %>
+    </div>
 
-    <%= label_tag 'task_marketing', 'Marketing' %>
+    <%= label_tag 'task_marketing', 'Marketing' , class: "col-sm-1 control-label" %>
+    <div class="col-sm-1">
     <%= check_box_tag 'service[task_list][]', 'Marketing', checked('Marketing'), id: 'task_marketing' %>
   </div>
   </div>

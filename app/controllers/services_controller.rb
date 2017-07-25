@@ -28,6 +28,11 @@ class ServicesController < ApplicationController
     # @tmp = params[:service]
     # @tmp["task_list"] = @tmp["task_list"].try(:split, ",")
     # @service = Service.new(@tmp)
+    if @service.initiated_by === "seeker" || @service.initiated_by === "Seeker"
+      @service.seeker_id = current_user.id
+    else @service.initiated_by === "helper"
+      @service.helper_id = current_user.id
+    end
 
     respond_to do |format|
       if @service.save
@@ -72,6 +77,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:seeker_id, :helper_id)
+      params.require(:service).permit(:seeker_id, :helper_id, :initiated_by, task_list:[])
     end
 end
