@@ -26,8 +26,7 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @profile.image %>
+  <% unless @profile.avatar_url.nil? %><%= image_tag @profile.avatar_url(:display) %><br /><% end %>
 </p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |

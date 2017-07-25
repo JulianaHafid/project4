@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: mum-assist
+  api_key: '627428364294417'
+  api_secret: rsh8sug1kr6MKnTDl4NMtudIgOw
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: mum-assist
+  api_key: '627428364294417'
+  api_secret: rsh8sug1kr6MKnTDl4NMtudIgOw
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: mum-assist
+  api_key: '627428364294417'
+  api_secret: rsh8sug1kr6MKnTDl4NMtudIgOw
+  enhance_image_tag: true
+  static_image_support: false

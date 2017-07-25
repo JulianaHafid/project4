@@ -1,2 +1,7 @@
 class Profile < ApplicationRecord
-end
+
+  mount_uploader :avatar, AvatarUploader
+
+  belongs_to :user
+
+  end

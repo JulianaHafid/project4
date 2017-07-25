@@ -8,15 +8,15 @@ end
 # All custom Gems
 # Devise
 gem 'devise'
-# bootstrapping
-gem 'bootstrap-generators'
 # jQuery
 gem 'jquery-rails'
+# bootstrapping
+gem 'bootstrap-generators'
 # relational mapping
 gem "rails-erd"
-# bootstrap generator
-gem 'bootstrap-generators'
-
+# for files uploading
+gem 'carrierwave'
+gem 'cloudinary'
 
 
 

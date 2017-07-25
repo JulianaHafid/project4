@@ -25,12 +25,10 @@ class ServicesController < ApplicationController
   # POST /services.json
   def create
     @service = Service.new(service_params)
-    # @tmp = params[:service]
-    # @tmp["task_list"] = @tmp["task_list"].try(:split, ",")
-    # @service = Service.new(@tmp)
-    if @service.initiated_by === "seeker" || @service.initiated_by === "Seeker"
+    
+    if @service.service_type === "seeking service" || @service.service_type === "Seeking Service"
       @service.seeker_id = current_user.id
-    else @service.initiated_by === "helper"
+    else @service.service_type === "offering service" || @service.service_type === "Offering Service"
       @service.helper_id = current_user.id
     end
 
@@ -77,6 +75,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:seeker_id, :helper_id, :initiated_by, task_list:[])
+      params.require(:service).permit(:seeker_id, :helper_id, :service_type, task_list:[])
     end
 end
