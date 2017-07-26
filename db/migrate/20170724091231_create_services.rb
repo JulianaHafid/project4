@@ -9,6 +9,7 @@ class CreateServices < ActiveRecord::Migration[5.1]
       t.integer :rating_for_helper
       t.text :review_for_seeker
       t.integer :rating_for_seeker
+      t.date :date_when_seek_help
 
       t.timestamps
     end

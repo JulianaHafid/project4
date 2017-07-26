@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170725144417) do
     t.integer "rating_for_helper"
     t.text "review_for_seeker"
     t.integer "rating_for_seeker"
+    t.date "date_when_seek_help"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["helper_id"], name: "index_services_on_helper_id"

@@ -25,10 +25,10 @@ class ServicesController < ApplicationController
   # POST /services.json
   def create
     @service = Service.new(service_params)
-    
-    if @service.service_type === "seeking service" || @service.service_type === "Seeking Service"
+
+    if @service.service_type === "seeking Help" || @service.service_type === "Seeking Help"
       @service.seeker_id = current_user.id
-    else @service.service_type === "offering service" || @service.service_type === "Offering Service"
+    else @service.service_type === "offering help" || @service.service_type === "Offering Help"
       @service.helper_id = current_user.id
     end
 
