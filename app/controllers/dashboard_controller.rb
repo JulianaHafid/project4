@@ -4,15 +4,17 @@ class DashboardController < ApplicationController
     #@services = Services.where(task_list: "Babysitting")
     @services = Service.where(seeker_id: current_user)
     @services1 = Service.where(helper_id: current_user)
-    @task =  Service.where(task_list: "Household Chores")
-    puts "CONSOLE **" , @task
-    #Service.find_by(task_list: "household_chores")
+    
+    #@test =  Service.where(service_type: "Seeking Help")
+
+
   end
 
   def match
-
     @services = Service.all
     render layout: "match"
+
+
   end
 
 end
