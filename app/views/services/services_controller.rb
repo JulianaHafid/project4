@@ -12,9 +12,8 @@ class ServicesController < ApplicationController
   def show
     #@task= @services.task_list
     #@newquery = Services.where tasklist include @tasklist
-    #@test1 = Service.service_type
+    @test1 = @services.task_list
     @test =  Service.where(service_type: "Offering Help")
-    render layout: "show"
   end
 
   # GET /services/new

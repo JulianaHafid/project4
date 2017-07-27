@@ -4,8 +4,7 @@ class DashboardController < ApplicationController
     #@services = Services.where(task_list: "Babysitting")
     @services = Service.where(seeker_id: current_user)
     @services1 = Service.where(helper_id: current_user)
-    
-    #@test =  Service.where(service_type: "Seeking Help")
+    @test =  Service.where(service_type: "Offering Help")
 
 
   end
@@ -13,8 +12,6 @@ class DashboardController < ApplicationController
   def match
     @services = Service.all
     render layout: "match"
-
-
   end
 
 end

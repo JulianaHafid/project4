@@ -10,7 +10,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   version :display do
     process :eager => true
-    process :resize_to_fill => [100, 100, :north]
+    process :resize_to_fill => [250, 250, :north]
   end
 
   # Override the directory where uploaded files will be stored.

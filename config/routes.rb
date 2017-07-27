@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   get 'dashboard/match'
 
+  
   get 'static/index'
 
   # app/config/routes.rb

@@ -1,130 +1,105 @@
-<div class="page-header">
-  <h2><%=Time.now%></h2>
+<h3>Match</h3>
+<div class="gridster">
 
-
-  <div class="col-md-12">
-    <table class="table table-striped table-bordered table-hover">
-      <h3>Profile</h3>
-      <thead>
-        <tr>
-          <th>Avatar</th>
-          <th>User ID</th>
-          <th>Name</th>
-          <th>Contact</th>
-          <th>Address</th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @profiles.each do |profile| %>
-          <tr>
-            <td><%= image_tag profile.avatar_url(:display) %></td>
-            <td><%= profile.user_id %></td>
-            <td><%= profile.name %></td>
-            <td><%= profile.contact %></td>
-            <td><%= profile.address %></td>
-            <td><%= link_to 'Show', profile,class:"btn btn-mini btn-info"%></td>
-            <td><%= link_to 'Edit', edit_profile_path(profile),class:"btn btn-mini btn-success" %></td>
-            <td><%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-mini btn-danger" %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-
-
-
-  <div class="col-md-12">
-    <table class="table table-striped table-bordered table-hover">
-      <h3>Services Requested</h3>
-      <thead>
-        <tr>
-          <th>Service ID</th>
-          <th>Types of Services Needed</th>
-          <th>Date</th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @services.each do |service| %>
+    <ul>
+        <li class="gridster-cell white" data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+          <% @profiles.each do |profile| %>
             <tr>
-            <td><%= service.id%></td>
-            <td><%= service.task_list %></td>
-            <td><%= service.date_when_seek_help %></td>
-            <td><%= link_to 'Show', service, class:"btn btn-mini btn-info" %></td>
-            <td><%= link_to 'Edit', edit_service_path(service), class:"btn btn-mini btn-success" %></td>
-            <td><%= link_to 'Remove', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-mini btn-danger" %></td>
+              <td class="avatar"><%= image_tag profile.avatar_url(:display) %></td>
             </tr>
-       <% end %>
-      </tbody>
-    </table>
-   </div
+          <% end %>
+        </li>
+        <li class="gridster-cell blue" data-row="1" data-col="1" data-sizex="3" data-sizey="2">
+          <div class="col-md-8">
+            <table class="table table-hover">
+              <h3>Profile</h3>
+              <% @profiles.each do |profile| %>
+              <tr>
+                <th>Profile ID</th>
+                <td><%= profile.user_id%></td>
+              </tr>
+              <tr>
+                <th>Name</th>
+                <td><%=profile.name%></td>
+              </tr>
+              <tr>
+                <th>Contact</th>
+                <td><%=profile.contact%></td>
+              </tr>
+              <tr>
+                <th>Address</th>
+                <td><%=profile.address%></td>
+              </tr>
+              <tr>
+                <td><%= link_to 'Show', profile,class:"btn btn-sm btn-info"%>
+                <%= link_to 'Edit', edit_profile_path(profile),class:"btn btn-sm btn-success" %>
+                <%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-danger" %></td>
+              </tr>
+              <% end %>
+            </table>
+          </div>
+        </li>
+        <li class="gridster-cell blue" data-row="1" data-col="3" data-sizex="2" data-sizey="2"></li>
 
-   <div class="col-md-12">
-     <table class="table table-striped table-bordered table-hover">
-       <h3>Types of Services Offered</h3>
-       <thead>
-         <tr>
-           <th>Service ID</th>
-           <th>Services Offered</th>
-           <th>Date</th>
-           <th></th>
-           <th></th>
-           <th></th>
-         </tr>
-       </thead>
-       <tbody>
-         <% @services1.each do |service| %>
-             <tr>
-             <td><%= service.id%></td>
-             <td><%= service.task_list %></td>
-             <td><%= service.date_when_seek_help%></td>
-             <td><%= link_to 'Show', service, class:"btn btn-mini btn-info" %></td>
-             <td><%= link_to 'Edit', edit_service_path(service), class:"btn btn-mini btn-success" %></td>
-             <td><%= link_to 'Remove', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-mini btn-danger" %></td>
-             </tr>
-        <% end %>
-       </tbody>
-     </table>
-   </div>
+        <li class="gridster-cell blue" data-row="1" data-col="3" data-sizex="7" data-sizey="2">
+          <div class="col-md-12">
+            <table class="table table-hover">
+              <h3>Services Requested</h3>
+              <thead>
+                <tr>
+                  <th>Service ID</th>
+                  <th>Types of Services Needed</th>
+                  <th>Date</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @services.each do |service| %>
+                <tr>
+                  <td><%= service.id%></td>
+                  <td><%= service.task_list %></td>
+                  <td><%= service.date_when_seek_help %></td>
+                  <td><%= link_to 'Match', service, class:"btn btn-sm btn-info" %></td>
+                  <td><%= link_to 'Edit', edit_service_path(service), class:"btn btn-sm btn-success" %></td>
+                  <td><%= link_to 'Remove', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div
+        </li>
 
-
-  <div class="col-md-12 ">
-    <table class= "table table-striped table-bordered table-hover">
-      <h3>List of Reviews - testing in progress - </h3>
-      <thead>
-        <tr>
-          <th>Service ID</th>
-          <th>Task List</th>
-          <th>Seeker ID</th>
-          <th>Helper ID</th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @test.each do |service| %>
-          <tr>
-            <td><%= service.id %></td>
-            <td><%= service.task_list %></td>
-            <td><%= service.seeker_id %></td>
-            <td><%= service.helper_id %></td>
-            <td><%= link_to 'Show', service, class:"btn btn-mini btn-info" %></td>
-            <td><%= link_to 'Edit', edit_service_path(service), class:"btn btn-mini btn-success" %></td>
-            <td><%= link_to 'Delete', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-mini btn-danger" %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-
-
-
+        <li class="gridster-cell turquoise" data-row="1" data-col="1" data-sizex="7" data-sizey="2">
+          <div class="col-md-12">
+            <table class="table table-hover">
+              <h3>Types of Services Offered</h3>
+              <thead>
+                <tr>
+                  <th>Service ID</th>
+                  <th>Types of Services Offered</th>
+                  <th>Date</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @services1.each do |service| %>
+                <tr>
+                  <td><%= service.id%></td>
+                  <td><%= service.task_list %></td>
+                  <td><%= service.date_when_seek_help %></td>
+                  <td><%= link_to 'Match', service, class:"btn btn-sm btn-info" %></td>
+                  <td><%= link_to 'Edit', edit_service_path(service), class:"btn btn-sm btn-success" %></td>
+                  <td><%= link_to 'Remove', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </li>
+    </ul>
 
 </div>

@@ -1,5 +1,6 @@
 <div class="page-header">
-  <%= link_to services_path, class: 'btn btn-default' do %>
+  <h6>Show</h6>
+  <%= link_to dashboard_index_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
@@ -7,23 +8,60 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>Show service</h1>
+  <h1>Service ID: <%= @service.id %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Initiated by:</dt>
-  <dd><%= @service.service_type %></dd>
+<div class="col-md-12">
+  <table class="table table-striped table-bordered table-hover">
 
-  <dt>Seeker:</dt>
-  <dd><%= @service.seeker_id %></dd>
+    <tr>
+      <th>Service Type</th>
+      <td><%= @service.service_type %></td>
+    </tr>
+    <tr>
+      <th>Seeker ID</th>
+      <td><%= @service.seeker_id %></td>
+    </tr>
+    <tr>
+      <th>Helper ID</th>
+      <td><%= @service.helper_id %></td>
+    </tr>
+    <tr>
+      <th>Task Requested</th>
+      <td><%= @service.task_list %></td>
+    </tr>
+    <tr>
+      <th>Date Service Needed</th>
+      <td><%= @service.date_when_seek_help%></td>
+    </tr>
+  </table>
+</div>
 
-  <dt>Helper:</dt>
-  <dd><%= @service.helper_id %></dd>
-
-  <dt>Task list:</dt>
-  <dd><%= @service.task_list %></dd>
-
-  <dt>Date</dt>
-  <dd><%= @service.date_when_seek_help %></dd>
-
-</dl>
+<div class="col-md-12">
+  <table class="table table-striped table-bordered table-hover">
+    <h3>List of Help that Matches</h3>
+    <thead>
+      <tr>
+        <th>Service ID</th>
+        <th>Services Offered</th>
+        <th>Date</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @test.each do |service| %>
+          <tr>
+          <td><%= service.id%></td>
+          <td><%= service.task_list %></td>
+          <td><%= service.date_when_seek_help%></td>
+          <td><%= link_to 'Chat', service, class:"btn btn-sm btn-primary" %></td>
+          <td><%= link_to 'Notify', service, class:"btn btn-sm btn-info" %></td>
+          <td><%= link_to 'Book', edit_service_path(service), class:"btn btn-sm btn-success" %></td>
+          </tr>
+     <% end %>
+     
+    </tbody>
+  </table>
+</div>

@@ -47,7 +47,7 @@
 
       <div class="col-sm-4 ">
         <%= f.label "Date needed/offered" %>
-        <%= f.date_field(:date_when_seek_help, min: Date.today, class: 'form-control')%>
+        <%= f.date_field(:date_when_seek_help, min: Date.today,:id => "datepicker", class: 'form-control')%>
       </div>
 
     <div class="form-group">

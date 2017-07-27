@@ -13,7 +13,12 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require rails-ujs
-//= require turbolinks
+//= require jquery.gridster.js
+//= require jquery.gridster.min.js
 //= require bootstrap
 //= require_tree .
+//= require moment
+//= require bootstrap-datetimepicker
+//= require turbolinks
