@@ -11,12 +11,15 @@ gem 'devise'
 # jQuery
 gem 'jquery-rails'
 # bootstrapping
-gem 'bootstrap-generators'
+gem 'bootstrap-sass', '~> 3.3.6'
 # relational mapping
 gem "rails-erd"
 # for files uploading
 gem 'carrierwave'
 gem 'cloudinary'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
 
 
 

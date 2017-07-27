@@ -9,4 +9,10 @@ class DashboardController < ApplicationController
     #Service.find_by(task_list: "household_chores")
   end
 
+  def match
+
+    @services = Service.all
+    render layout: "match"
+  end
+
 end

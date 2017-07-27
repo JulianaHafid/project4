@@ -12,41 +12,47 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <table summary= "Need help or would like to offer your help?">
+
+
     <div class="form-group">
-      <%= f.label "Type of Help", class: "col-sm-2 control-label" %>
-      <div class="col-sm-10">
-        <%= f.select(:service_type,options_for_select([['Seeking Help', 'Seeking Help'],['Offering Help', 'Offering Help']]),{include_blank: true}) %>
+      <div class="col-sm-12">
+        <%= f.label "Type of Help", class: "control-label" %>
+        <%= f.select(:service_type,options_for_select([['Seeking Help', 'Seeking Help'],['Offering Help', 'Offering Help']]),{include_blank: true},class: 'form-control') %>
+        </div>
+
+        <div class="col-sm-2">
+        <%= f.label "List of task" %>
+      </div>
+
+      <div class="col-sm-2">
+      <%= label_tag 'task_babysit', 'Babysit' %>
+      <%= check_box_tag 'service[task_list][]', 'Babysit', checked('Babysit'), id: 'task_babysit',class: 'form-control' %>
+      </div>
+
+      <div class="col-sm-2">
+      <%= label_tag 'task_householdchores', 'Household Chores' %>
+      <%= check_box_tag 'service[task_list][]', 'Household Chores', checked('Household Chores'), id: 'task_householdchores',class: 'form-control' %>
+      </div>
+
+      <div class="col-sm-3">
+      <%= label_tag 'task_elderly', 'Elderly Care'%>
+      <%= check_box_tag 'service[task_list][]', 'Elderly Care', checked('Elderly Care'), id: 'task_elderlycare',class: 'form-control' %>
+      </div>
+
+      <div class="col-sm-3">
+      <%= label_tag 'task_marketing', 'Marketing' %>
+      <%= check_box_tag 'service[task_list][]', 'Marketing', checked('Marketing'), id: 'task_marketing',class: 'form-control' %>
+      </div>
+
+      <div class="col-sm-4 ">
+        <%= f.label "Date needed/offered" %>
+        <%= f.date_field(:date_when_seek_help, min: Date.today, class: 'form-control')%>
+      </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-5 col-sm-7">
+        <%= f.submit class: "btn btn-primary" %>
       </div>
     </div>
-
-  </div>
-  <div class="form-group ">
-    <%= f.label "List of task", class: "col-sm-2 control-label" %>
-
-    <%= label_tag 'task_babysit', 'Babysit', class: "col-sm-3 control-label"  %>
-    <div class="col-sm-1">
-    <%= check_box_tag 'service[task_list][]', 'Babysit', checked('Babysit'), id: 'task_babysit' %>
-    </div>
-
-    <%= label_tag 'task_householdchores', 'Household Chores' , class: "col-sm-4 control-label"%>
-    <div class="col-sm-1">
-    <%= check_box_tag 'service[task_list][]', 'Household Chores', checked('Household Chores'), id: 'task_householdchores' %>
-    </div>
-
-    <%= label_tag 'task_elderly', 'Elderly Care', class: "col-sm-3 control-label"  %>
-    <div class="col-sm-1">
-    <%= check_box_tag 'service[task_list][]', 'Elderly Care', checked('Elderly Care'), id: 'task_elderlycare' %>
-    </div>
-
-    <%= label_tag 'task_marketing', 'Marketing' , class: "col-sm-3 control-label" %>
-    <div class="col-sm-1">
-    <%= check_box_tag 'service[task_list][]', 'Marketing', checked('Marketing'), id: 'task_marketing' %>
-  </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-5 col-sm-7">
-      <%= f.submit class: "btn btn-primary" %>
-    </div>
-  </div>
 <% end %>

@@ -10,8 +10,9 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-        <th>Initiated By</th>
-        <th>Services Offered/Needed</th>
+        <th>Type of Help</th>
+        <th>Task List</th>
+        <th>Date Help needed</th>
         <th>Seeker Id</th>
         <th>Helper Id</th>
         <th>Select Options</th>
@@ -23,8 +24,10 @@
       <tr>
         <td><%= service.service_type %></td>
         <td><%= service.task_list %></td>
+        <td><%= service.date_when_seek_help %></td>
         <td><%= service.seeker_id %></td>
         <td><%= service.helper_id %></td>
+
         <td><%= link_to 'Show', service %>
         <%= link_to 'Edit', edit_service_path(service) %>
         <%= link_to 'Delete', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
