@@ -10,14 +10,9 @@ class ServicesController < ApplicationController
   # GET /services/1
   # GET /services/1.json
   def show
-    #@task= @services.task_list
-    #@newquery = Services.where tasklist include @tasklist
-    #@test1 = Service.service_type
-    #@test =  Service.where(service_type: "Offering Help")
     @test1 = Service.where("service_type like ?", "%Offering Help%")
-    @test = @test1.where("task_list like ?", "%Babysit%")
-    #@test = Service.where("array_to_string(task_list, '||') ILIKE :name", name: "%babysit%")
-
+    @test2 = Service.find(params[:id]).task_list
+    @test = @test1.where("task_list like ?", "%#{@test2}%")
     render layout: "show"
   end
 
