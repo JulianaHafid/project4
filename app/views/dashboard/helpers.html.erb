@@ -1,0 +1,33 @@
+<h3>All Help needed page</h3>
+<h1>List of Help Available</h1>
+
+<div class="col-md-12">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Service ID</th>
+        <th>Types of Services Offered</th>
+        <th>Date</th>
+        <th>Helper ID</th>
+        <th>Seeker ID</th>
+        <th>Service Type Requested</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @helpers.each do |service| %>
+      <tr>
+        <td><%= service.id%></td>
+        <td><%= service.task_list %></td>
+        <td><%= service.date_when_seek_help %></td>
+        <td><%= service.helper_id %></td>
+        <td><%= service.seeker_id %></td>
+        <td><%= service.service_type %></td>
+        <td><%= link_to 'Contact', service, class:"btn btn-sm btn-info" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

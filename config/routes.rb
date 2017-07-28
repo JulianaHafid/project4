@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'dashboard/index'
   get 'dashboard/match'
-
-  
+  get 'dashboard/seekers'
+  get 'dashboard/helpers'
   get 'static/index'
 
   # app/config/routes.rb

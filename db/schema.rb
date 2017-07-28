@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170725144417) do
+ActiveRecord::Schema.define(version: 20170728003857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20170725144417) do
     t.string "service_type"
     t.bigint "seeker_id"
     t.bigint "helper_id"
-    t.string "task_list"
+    t.text "task_list"
     t.text "review_for_helper"
     t.integer "rating_for_helper"
     t.text "review_for_seeker"

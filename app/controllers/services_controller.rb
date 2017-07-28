@@ -13,7 +13,11 @@ class ServicesController < ApplicationController
     #@task= @services.task_list
     #@newquery = Services.where tasklist include @tasklist
     #@test1 = Service.service_type
-    @test =  Service.where(service_type: "Offering Help")
+    #@test =  Service.where(service_type: "Offering Help")
+    @test1 = Service.where("service_type like ?", "%Offering Help%")
+    @test = @test1.where("task_list like ?", "%Babysit%")
+    #@test = Service.where("array_to_string(task_list, '||') ILIKE :name", name: "%babysit%")
+
     render layout: "show"
   end
 
