@@ -1,4 +1,5 @@
 <div class="page-header">
+
   <h6>Show</h6>
   <%= link_to dashboard_index_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
@@ -45,9 +46,10 @@
         <th>Service ID</th>
         <th>Services Offered</th>
         <th>Date</th>
+        <th>Helper ID</th>
         <th></th>
         <th></th>
-        <th></th>
+
       </tr>
     </thead>
     <tbody>
@@ -56,11 +58,14 @@
           <td><%= service.id%></td>
           <td><%= service.task_list %></td>
           <td><%= service.date_when_seek_help%></td>
-          <td><%= link_to 'Chat', service, class:"btn btn-sm btn-primary" %></td>
-          <td><%= link_to 'Notify', service, class:"btn btn-sm btn-info" %></td>
-          <td><%= link_to 'Book', edit_service_path(service), class:"btn btn-sm btn-success" %></td>
-          </tr>
+          <td><%= service.helper_id%></td>
+
+          <td><%= link_to 'Chat', service, class:"btn btn-sm btn-info" %></td>
+          <td><%= link_to 'Book', booking_service_path(service), class:"btn btn-sm btn-success" %></td>
+        </tr>
      <% end %>
     </tbody>
   </table>
+
+
 </div>

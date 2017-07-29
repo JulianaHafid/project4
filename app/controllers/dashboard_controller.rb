@@ -8,12 +8,26 @@ class DashboardController < ApplicationController
   end
 
   def seekers
-    @seekers =  Service.where(service_type: "Seeking Help")
+    if params[:search]
+      #Find all record with service_type = "Seeking Help" and task_list meets the search string
+      @seeking = Service.where(service_type: "Seeking Help")
+      @search = @seeking.where("task_list ilike ?", "%#{params[:search]}%")
+    else
+      # if search string is empty
+      @search = Service.where(service_type: "Seeking Help")
+    end
     #render layout: "match"
   end
 
   def helpers
-    @helpers =  Service.where(service_type: "Offering Help")
+    if params[:search]
+      #Find all record with service_type = "Seeking Help" and task_list meets the search string
+      @seeking = Service.where(service_type: "Offering Help")
+      @search = @seeking.where("task_list ilike ?", "%#{params[:search]}%")
+    else
+      # if search string is empty
+      @search = Service.where(service_type: "Offering Help")
+    end
     #render layout: "match"
   end
 end
