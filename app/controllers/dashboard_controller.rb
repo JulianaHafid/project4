@@ -5,6 +5,11 @@ class DashboardController < ApplicationController
     @services = Service.where(seeker_id: current_user)
     @services1 = Service.where(helper_id: current_user)
     #@test =  Service.where(service_type: "Offering Help")
+
+    #query all reviews associated to current user
+    @review1 = Service.where(seeker_id: current_user)
+    @review2 = @review1.where.not(helper_id: nil)
+    @review = @review2.where("date_when_seek_help < ?", Date.today )
   end
 
   def seekers

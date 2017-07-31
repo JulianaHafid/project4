@@ -10,6 +10,9 @@ class ServicesController < ApplicationController
   # GET /services/1
   # GET /services/1.json
   def show
+
+    
+    #Query for service you help and seek
     # get from Service table where service type = "Offering Help"
     @test1 = Service.where("service_type ilike ?", "%Offering Help%")
     # get from Service table where id is what is passed in params"
@@ -18,6 +21,11 @@ class ServicesController < ApplicationController
     @test0 = @test1.where("task_list ilike ?", "%#{@test2}%")
     #from the results in the query @test0 , only display those with helper_id not equal to current user
     @test = @test0.where.not(helper_id: current_user)
+
+    #Query for Review
+
+
+
     render layout: "show"
   end
 
