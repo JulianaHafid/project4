@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
+
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -26,8 +26,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 #for gridster
 gem 'gridster-rails'
 gem 'jquery-turbolinks'
-#gridly
-gem 'rails-assets-gridly'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'

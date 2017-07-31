@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+
+  #match 'services/book/:service_id/:helper_id' => 'services#book', :via => :put
+  get 'services/book/:service_id/:helper_id' => 'services#book'
   get 'dashboard/index'
-  #get 'dashboard/index', to: "pages#index", as: "dashboard"
   get 'dashboard/match'
   get 'dashboard/seekers'
   get 'dashboard/helpers'
   get 'static/index'
+
   # app/config/routes.rb
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   resources :services

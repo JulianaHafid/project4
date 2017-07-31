@@ -31,9 +31,6 @@ class ServicesController < ApplicationController
 
   end
 
-  def booking
-    #helperid = params[:helper_id]
-  end
 
   # POST /services
   # POST /services.json
@@ -71,6 +68,16 @@ class ServicesController < ApplicationController
     end
   end
 
+  def book
+    @service = Service.find(params[:service_id])
+    @helperid = params[:helper_id]
+    @service.update_attribute(:helper_id, @helperid)
+    respond_to do |format|
+        format.html {render :nothing => true}
+        format.js
+    end
+  end
+
   # DELETE /services/1
   # DELETE /services/1.json
   def destroy
@@ -81,14 +88,17 @@ class ServicesController < ApplicationController
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_service
       @service = Service.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:seeker_id, :helper_id,:date_when_seek_help, :service_type, task_list:[])
+      params.require(:service).permit(:id, :seeker_id, :helper_id,:date_when_seek_help, :service_type, task_list:[])
     end
 end

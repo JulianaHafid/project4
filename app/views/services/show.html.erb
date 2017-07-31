@@ -12,7 +12,8 @@
   <h1 class="showpage">Service ID: <%= @service.id %></h1>
 </div>
 
-<div class="col-md-12">
+
+<div class="col-md-12" id="book">
   <table class="table table-bordered table-hover">
 
     <tr>
@@ -61,7 +62,8 @@
           <td><%= service.helper_id%></td>
 
           <td><%= link_to 'Chat', service, class:"btn btn-sm btn-info" %></td>
-          <td><%= link_to 'Book', service, class:"btn btn-sm btn-success" %></td>
+          <!-- <td><%= link_to 'Book', {:action => :book, :service_id => @service.id,:helper_id => service.helper_id},remote: true,id: "book", :method => :put, class:"btn btn-sm btn-success" %></td> -->
+          <td><%= link_to 'Book', {:action => :book, :service_id => @service.id,:helper_id => service.helper_id},remote: true, class:"btn btn-sm btn-success" %></td>
         </tr>
      <% end %>
     </tbody>
