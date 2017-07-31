@@ -23,3 +23,4 @@
 //= require bootstrap-datetimepicker
 //= require turbolinks
 //= require custom_ajax
+//= require jquery.gridly

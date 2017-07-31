@@ -1,48 +1,45 @@
-<h3>Match</h3>
-<div class="gridster">
 
+<div class="gridster" id="my_div">
     <ul>
-        <li class="gridster-cell white" data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+        <li class="gridster-cell turquoise" data-row="1" data-col="1" data-sizex="2" data-sizey="2">
           <% @profiles.each do |profile| %>
             <tr>
               <td class="avatar"><%= image_tag profile.avatar_url(:display) %></td>
             </tr>
           <% end %>
         </li>
-        <li class="gridster-cell blue" data-row="1" data-col="1" data-sizex="3" data-sizey="2">
-          <div class="col-md-8">
-            <table class="table table-hover">
+        <li class="gridster-cell blue" data-row="1" data-col="1" data-sizex="5" data-sizey="2">
+          <div class="col-md-12">
+            <table class="table profile table-hover">
               <h3>Profile</h3>
               <% @profiles.each do |profile| %>
               <tr>
-                <th>Profile ID</th>
+                <th class="profile">User ID:</th>
                 <td><%= profile.user_id%></td>
               </tr>
               <tr>
-                <th>Name</th>
+                <th class="profile">Name:</th>
                 <td><%=profile.name%></td>
               </tr>
               <tr>
-                <th>Contact</th>
+                <th class="profile">Contact:</th>
                 <td><%=profile.contact%></td>
               </tr>
               <tr>
-                <th>Address</th>
+                <th class="profile">Address:</th>
                 <td><%=profile.address%></td>
               </tr>
               <tr>
-                <td><%= link_to 'Show', profile,class:"btn btn-sm btn-info"%>
-                <%= link_to 'Edit', edit_profile_path(profile),class:"btn btn-sm btn-success" %>
-                <%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-sm btn-danger" %></td>
+                <td><%= link_to 'Edit', edit_profile_path(profile),class:"btn btn-sm btn-success" %></td>
               </tr>
               <% end %>
             </table>
           </div>
-        </li>
-        <li class="gridster-cell blue" data-row="1" data-col="3" data-sizex="2" data-sizey="2">Chat List Here<p>
-          You can move your widget around.</p></li>
+        <!-- </li>
+        <li class="gridster-cell turquoise" data-row="1" data-col="3" data-sizex="2" data-sizey="2">Chat List Here<p>
+        </li> -->
 
-        <li class="gridster-cell blue" data-row="2" data-col="1" data-sizex="7" data-sizey="2">
+        <li class="gridster-cell turquoise" data-row="2" data-col="1" data-sizex="7" data-sizey="2">
           <div class="col-md-12">
             <table class="table table-hover">
               <h3>Services Requested</h3>
@@ -64,8 +61,6 @@
                   <td><%= service.id%></td>
                   <td><%= service.task_list %></td>
                   <td><%= service.date_when_seek_help %></td>
-                  <td><%= service.seeker_id %></td>
-                  <td><%= service.helper_id %></td>
                   <td><%= link_to 'Match', service, class:"btn btn-sm btn-info" %></td>
                   <td><%= link_to 'Edit', edit_service_path(service), class:"btn btn-sm btn-success" %></td>
                   <td><%= link_to 'Remove', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %></td>
@@ -76,7 +71,7 @@
           </div
         </li>
 
-        <li class="gridster-cell turquoise" data-row="3" data-col="1" data-sizex="7" data-sizey="2">
+        <li class="gridster-cell blue" data-row="3" data-col="1" data-sizex="7" data-sizey="2">
           <div class="col-md-12">
             <table class="table table-hover">
               <h3>Services Offered</h3>
@@ -85,8 +80,6 @@
                   <th>Service ID</th>
                   <th>Types of Services Offered</th>
                   <th>Date</th>
-                  <th>Seeker ID</th>
-                  <th>Helper ID</th>
                   <th></th>
                   <th></th>
                   <th></th>
@@ -98,8 +91,6 @@
                   <td><%= service.id%></td>
                   <td><%= service.task_list %></td>
                   <td><%= service.date_when_seek_help %></td>
-                  <td><%= service.seeker_id %></td>
-                  <td><%= service.helper_id %></td>
                   <!-- <td><%= link_to 'Match', service, class:"btn btn-sm btn-info" %></td> -->
                   <td><%= link_to 'Edit', edit_service_path(service), class:"btn btn-sm btn-success" %></td>
                   <td><%= link_to 'Remove', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %></td>

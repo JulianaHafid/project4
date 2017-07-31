@@ -1,9 +1,8 @@
-<h3>All Help needed page</h3>
-<h1>List of Help Needed</h1>
+
+<h1>List of Help Requested</h1>
 
 <%= form_tag dashboard_seekers_path, :method => 'get', :id => "service_search"  do %>
 <%= text_field_tag :search, params[:search]%>
-<%= submit_tag "Search", :name => nil  %>
+<%= submit_tag "Search", :name => nil , class:"btn btn-default" %>
 <% end %>
-
 <div id="seekers"><%= render 'seekers' %></div>

@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   get 'dashboard/index'
+  #get 'dashboard/index', to: "pages#index", as: "dashboard"
   get 'dashboard/match'
   get 'dashboard/seekers'
   get 'dashboard/helpers'
   get 'static/index'
-
   # app/config/routes.rb
   devise_for :users, :controllers => {:registrations => "users/registrations"}
-
   resources :services
   resources :profiles
   #devise_for :users
