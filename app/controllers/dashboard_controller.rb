@@ -35,4 +35,18 @@ class DashboardController < ApplicationController
     end
     #render layout: "match"
   end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_service
+      @service = Service.find(params[:id])
+
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def service_params
+      params.require(:service).permit(:id, :seeker_id, :review_for_helper, :rating_for_helper, :review_for_seeker, :rating_for_seeker, :helper_id, :date_when_seek_help, :service_type, task_list:[])
+    end
+
+
 end

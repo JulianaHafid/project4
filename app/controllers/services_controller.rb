@@ -11,7 +11,7 @@ class ServicesController < ApplicationController
   # GET /services/1.json
   def show
 
-    
+
     #Query for service you help and seek
     # get from Service table where service type = "Offering Help"
     @test1 = Service.where("service_type ilike ?", "%Offering Help%")
@@ -23,8 +23,6 @@ class ServicesController < ApplicationController
     @test = @test0.where.not(helper_id: current_user)
 
     #Query for Review
-
-
 
     render layout: "show"
   end
@@ -86,6 +84,32 @@ class ServicesController < ApplicationController
     end
   end
 
+  def review
+    @service = Service.find(params[:id])
+    service = Service.find(params[:id])
+    @service.review_for_helper= params[:review_for_helper]
+    @service.rating_for_helper= params[:rating_for_helper]
+    @service.save
+    respond_to do |format|
+        format.html {render :nothing => true}
+        format.js
+    end
+  end
+
+  # def reviewupdate
+  #   @service = Service.find(params[:id])
+  #   @helper= (params[:review_for_helper])
+  #   # @service.review_for_helper= params[:review_for_helper]
+  #   # @service.rating_for_helper= params[:rating_for_helper]
+  #   # puts "in review update"
+  #   # @service.save
+  #   # respond_to do |format|
+  #   #     format.html {render :nothing => true}
+  #   #     format.js
+  #   # end
+  #   #redirect_to dashboard_index_url
+  # end
+
   # DELETE /services/1
   # DELETE /services/1.json
   def destroy
@@ -107,6 +131,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:id, :seeker_id, :helper_id,:date_when_seek_help, :service_type, task_list:[])
+      params.require(:service).permit(:id, :seeker_id, :helper_id,:date_when_seek_help, :review_for_helper, :rating_for_helper, :review_for_seeker, :rating_for_seeker, :service_type, task_list:[])
     end
 end

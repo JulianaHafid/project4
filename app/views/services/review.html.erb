@@ -1,0 +1,85 @@
+
+
+<div class="col-md-12" >
+  <table class="table table-bordered table-hover">
+    <div class="page-header">
+      <%= link_to dashboard_index_path, class: 'btn btn-default' do %>
+        <span class="glyphicon glyphicon-list-alt"></span>
+        Back
+      <% end %>
+      <h1>New service</h1>
+
+    <tr>
+      <th>Service Type</th>
+      <td><%= @service.service_type %></td>
+    </tr>
+    <tr>
+      <th>Seeker ID</th>
+      <td><%= @service.seeker_id %></td>
+    </tr>
+    <tr id="book">
+      <th>Helper ID</th>
+      <td><%= @service.helper_id %></td>
+    </tr>
+    <tr>
+      <th>Task Requested</th>
+      <td><%= @service.task_list %></td>
+    </tr>
+    <tr>
+      <th>Date Service Needed</th>
+      <td><%= @service.date_when_seek_help%></td>
+    </tr>
+    <tr>
+      <th>Review for Helper</th>
+      <td><%=@service.review_for_helper%></td>
+    </tr>
+    <tr>
+      <th>Helper's Rating</th>
+      <td><%=@service.rating_for_helper%></td>
+    </tr>
+    <tr>
+      <th>Review for Requestor</th>
+      <td><%=@service.review_for_seeker%></td>
+    </tr>
+    <tr>
+      <th>Rating for Requestor</th>
+      <td><%=@service.rating_for_seeker%></td>
+    </tr>
+  </table>
+</div>
+
+
+<%= form_for @service do |f| %>
+  <% if @service.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h4>
+      <ul>
+      <% @service.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h5>Post or update a review below</h5>
+  <div class = "col-md-12">
+      <%= f.label :review_for_helper, class: "control-label" %>
+      <%= f.text_area :review_for_helper,size: "20x8", class: "form-control" %>
+  </div>
+  <div class = "col-md-1">
+     <%=f.label "Rating", class: "control-label"%>
+     <%=f.select(:rating_for_helper,options_for_select([['1', 1],['2', 2],['3', 3],['4', 4],['5', 5]]),{include_blank: true})%>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-5 col-sm-7">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+
+<% end %>
+
+</div>
+
+
+<!-- <%= link_to 'Back', dashboard_index_path %> -->

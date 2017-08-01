@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
-  #match 'services/book/:service_id/:helper_id' => 'services#book', :via => :put
+  #match 'dashboard/review/:id' => 'dashboard#review', :via => :put
   get 'services/book/:service_id/:helper_id' => 'services#book'
-
-  get 'dashboard/index'
+  #match 'dashboard/review/:id' => 'dashboard#review', :via => :put
+  get 'services/review/:id' => 'services#review' , :as => "services_review"
+  #get 'services/reviewupdate/:id'=> 'services#reviewupdate' , :as => "services_reviewupdate"
+  #put "services/reviewupdate/:id" => "services#reviewupdate", :as => "services_reviewupdate"
+  #get "services/reviewupdate/:id" => "services#reviewupdate"
   get 'dashboard/index'
   get 'dashboard/match'
   get 'dashboard/seekers'

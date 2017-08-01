@@ -61,9 +61,9 @@
                   <td><%= service.date_when_seek_help %></td>
                   <td><%= service.helper_id %></td>
                   <td><%= service.rating_for_helper%></td>
-                  <td><%= link_to 'View', edit_service_path(service), class:"btn btn-sm btn-success" %></td>
+                  <td><%= link_to 'View', services_review_path(service.id), class:"btn btn-sm btn-info" %></td>
                   <td><%= link_to 'Remove', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %></td>
-                </tr>
+
                 <% end %>
               </tbody>
             </table>
