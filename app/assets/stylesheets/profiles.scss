@@ -1,7 +1,8 @@
-.container {
+.profile_table{
   padding: 0px;
   margin-left: auto;
   margin-right: auto;
+
 }
 
 .avatar_picture {
@@ -11,4 +12,17 @@
 
 .table {
   width: 100%;
+}
+
+th {
+  text-align: center;
+}
+
+.profile-title {
+  margin-top: 10px;
+  margin-bottom: 170px;
+}
+
+td {
+  vertical-align: middle;
 }
