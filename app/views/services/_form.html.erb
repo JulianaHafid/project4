@@ -12,7 +12,7 @@
     </div>
   <% end %>
 
-  <div class="page-header">
+  <div class="services-header">
     <h1>Seek or Offer Help</h1>
   </div>
 
@@ -64,12 +64,12 @@
 
     <br />
 
-<button type="button" class="btn btn-default btn-xs">
-<%= f.submit %>
-</button>
 
+<%= f.submit class: "btn btn-default" %>
 <% end %>
 
-<button type="button" class="btn btn-default btn-xs">
-  <%= link_to 'Back', services_path %>
-</button>
+
+<%= link_to services_path, class: 'btn btn-default' do %>
+  <span class="glyphicon glyphicon-list-alt"></span>
+  Back
+<% end %>
