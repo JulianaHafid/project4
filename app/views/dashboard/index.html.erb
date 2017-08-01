@@ -63,7 +63,7 @@
                   <td><%= service.rating_for_helper%></td>
                   <td><%= link_to 'View', services_review_path(service.id), class:"btn btn-sm btn-info" %></td>
                   <td><%= link_to 'Remove', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %></td>
-
+                    
                 <% end %>
               </tbody>
             </table>

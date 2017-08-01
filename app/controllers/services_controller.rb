@@ -90,10 +90,19 @@ class ServicesController < ApplicationController
     @service.review_for_helper= params[:review_for_helper]
     @service.rating_for_helper= params[:rating_for_helper]
     @service.save
-    respond_to do |format|
-        format.html {render :nothing => true}
-        format.js
-    end
+      respond_to do |format|
+          format.html {render :nothing => true}
+          format.js
+      end
+    # respond_to do |format|
+    #   if @service.save
+    #     format.html { redirect_to @service, notice: 'Service was successfully created.' }
+    #     format.json { render :show, status: :created, location: @service }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @service.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # def reviewupdate

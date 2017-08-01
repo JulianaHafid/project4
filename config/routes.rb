@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   get 'services/book/:service_id/:helper_id' => 'services#book'
   #match 'dashboard/review/:id' => 'dashboard#review', :via => :put
   get 'services/review/:id' => 'services#review' , :as => "services_review"
-  #get 'services/reviewupdate/:id'=> 'services#reviewupdate' , :as => "services_reviewupdate"
-  #put "services/reviewupdate/:id" => "services#reviewupdate", :as => "services_reviewupdate"
-  #get "services/reviewupdate/:id" => "services#reviewupdate"
+
   get 'dashboard/index'
   get 'dashboard/match'
   get 'dashboard/seekers'
