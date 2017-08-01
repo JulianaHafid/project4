@@ -15,39 +15,51 @@
     <%= form.label :user_id %>
     <%= form.number_field :user_id, id: :profile_user_id %>
   </div> -->
+<div class="profiles-new-form">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>New Profile</h1>
+        <br />
+        <section>
+          <form>
+            <div class="form-group">
+              <%= form.label :name, 'Name' %>
+              <%= form.text_field :name, id: :profile_name %>
+            </div>
 
-<form>
+            <div class="form-group">
+              <%= form.label :contact, 'Contact' %>
+              <%= form.number_field :contact, id: :profile_contact %>
+            </div>
 
+            <div class="form-group">
+              <%= form.label :address, 'Address' %>
+              <%= form.text_field :address, id: :profile_address %>
+            </div>
 
-  <div class="form-group">
-    <%= form.label :name, 'Name' %>
-    <%= form.text_field :name, id: :profile_name %>
+            <div class="form-group">
+              <%= form.label :gender, 'Gender' %>
+              <%= form.text_field :gender, id: :profile_gender %>
+            </div>
+
+            <div class="form-group">
+              <legend>Avatar</legend>
+              <%= form.file_field :avatar %>
+            </div>
+
+            <div class="actions">
+              <%= form.submit %>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <%= form.label :contact, 'Contact' %>
-    <%= form.number_field :contact, id: :profile_contact %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :address, 'Address' %>
-    <%= form.text_field :address, id: :profile_address %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :gender, 'Gender' %>
-    <%= form.text_field :gender, id: :profile_gender %>
-  </div>
-
-  <div class="form-group">
-    <legend>Avatar</legend>
-    <%= form.file_field :avatar %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
 
 
-</form>
+
+
+
 <% end %>
