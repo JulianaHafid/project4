@@ -44,8 +44,7 @@
               <thead>
                 <tr>
                   <th>Service ID</th>
-                  <th>Types of Services Needed</th>
-                  <th>Date</th>
+                  <th>Service Date</th>
                   <th>Helper ID</th>
                   <th>Rating</th>
                   <th></th>
@@ -57,20 +56,23 @@
                 <% @review.each do |service| %>
                 <tr>
                   <td><%= service.id%></td>
-                  <td><%= service.task_list %></td>
                   <td><%= service.date_when_seek_help %></td>
                   <td><%= service.helper_id %></td>
                   <td><%= service.rating_for_helper%></td>
                   <td><%= link_to 'View', services_review_path(service.id), class:"btn btn-sm btn-info" %></td>
-                  <td><%= link_to 'Remove', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %></td>
-                    
+                  <!-- <td><%= link_to 'Remove', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %></td> -->
                 <% end %>
               </tbody>
             </table>
           </div
         </li>
 
+
         <li class="gridster-cell turquoise" data-row="2" data-col="1" data-sizex="7" data-sizey="2">
+          <%= link_to new_service_path, class: 'btn btn-primary' do %>
+            <span class="glyphicon glyphicon-plus"></span>
+            New Request
+          <% end %>
           <div class="col-md-12">
             <table class="table table-hover">
               <h3>Services Requested</h3>
