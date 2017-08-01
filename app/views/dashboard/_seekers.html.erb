@@ -1,30 +1,29 @@
-<!-- <div class="col-md-12"> -->
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Service ID</th>
-        <th>Types of Services Offered</th>
-        <th>Date</th>
-        <th>Helper ID</th>
-        <th>Seeker ID</th>
-        <th>Service Type Requested</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @search.each do |service| %>
-      <tr>
-        <td><%= service.id%></td>
-        <td><%= service.task_list %></td>
-        <td><%= service.date_when_seek_help %></td>
-        <td><%= service.helper_id %></td>
-        <td><%= service.seeker_id %></td>
-        <td><%= service.service_type %></td>
-        <td><%= link_to 'Contact', service, class:"btn btn-sm btn-info" %></td>
-      </tr>
+<div class=dashboard-seekers-wrapper>
+  <div class="col-md-12">
+    <h3>Seeking Help</h3>
+      <%= form_tag dashboard_seekers_path, :method => 'get', :id => "service_search"  do %>
+      <%= text_field_tag :search, params[:search]%>
+      <%= submit_tag "Search", :name => nil  %>
       <% end %>
-    </tbody>
-  </table>
-<!-- </div> -->
+      <br />
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @search.each do |service| %>
+          <tr>
+            <td><%= service.task_list %></td>
+            <td><%= service.date_when_seek_help %></td>
+            <td><%= service.service_type %></td>
+            <td><%= link_to 'Contact', service, class:"btn btn-sm btn-info" %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+</div>
