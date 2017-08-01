@@ -2,7 +2,8 @@
   padding: 0px;
   margin-left: auto;
   margin-right: auto;
-
+  border-color: rgba(158,173,195,.16);
+  background: #fff;
 }
 
 .avatar_picture {
@@ -14,15 +15,17 @@
   width: 100%;
 }
 
-th {
-  text-align: center;
-}
-
 .profile-title {
   margin-top: 10px;
   margin-bottom: 170px;
+  font-weight: bold;
+  font-variant: small-caps;
 }
 
 td {
   vertical-align: middle;
+}
+
+th {
+  text-align: center;
 }
