@@ -31,10 +31,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-2">
-        <%= f.label "Choose Task" %>
-        </div>
-
-        <div class="col-sm-2">
         <%= label_tag 'task_babysit', 'Babysit' %>
         <%= check_box_tag 'service[task_list][]', 'Babysit', checked('babysit'), id: 'task_babysit',class: 'form-control' %>
         </div>
@@ -54,7 +50,7 @@
         <%= check_box_tag 'service[task_list][]', 'Marketing', checked('marketing'), id: 'task_marketing',class: 'form-control' %>
         </div>
 
-        <div class="col-sm-2">
+        <div class="col-sm-1-offset col-sm-3">
           <%= f.label "Date of service" %>
           <%= f.date_field(:date_when_seek_help, min: Date.today,:id => "datepicker", class: 'form-control')%>
         </div>
