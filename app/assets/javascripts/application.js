@@ -14,7 +14,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
-//= require rails-ujs
 //= require jquery.gridster.js
 //= require jquery.gridster.min.js
 //= require bootstrap
@@ -23,4 +22,3 @@
 //= require bootstrap-datetimepicker
 //= require turbolinks
 //= require custom_ajax
-//= require jquery.gridly

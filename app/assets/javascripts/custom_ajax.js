@@ -8,6 +8,8 @@ $(function() {
 
   autoType(".type-js",200);
 
+
+
 });
 
 
@@ -37,10 +39,6 @@ function autoType(elementClass, typingSpeed){
     }
   },1500);
 }
-
-setInterval(function(){
-   $('#my_div').load('/path/to/server/source');
-}, 500) /* time in milliseconds (ie 2 seconds)*/
 
 
 $('.datepicker').datepicker({
