@@ -43,7 +43,7 @@
       </thead>
       <tbody>
         <% @test.each do |service| %>
-
+      
             <tr>
             <td><%= service.id%></td>
             <td><%= service.task_list %></td>
@@ -54,7 +54,7 @@
             <!-- <td><%= link_to 'Book', {:action => :book, :service_id => @service.id,:helper_id => service.helper_id},remote: true,id: "book", :method => :put, class:"btn btn-sm btn-success" %></td> -->
             <td><%= link_to 'Book', {:action => :book, :service_id => @service.id,:helper_id => service.helper_id},remote: true, class:"btn btn-sm btn-success" %></td>
           </tr>
-          
+
        <% end %>
       </tbody>
     </table>

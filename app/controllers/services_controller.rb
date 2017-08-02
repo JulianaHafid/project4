@@ -80,9 +80,15 @@ class ServicesController < ApplicationController
     @helperid = params[:helper_id]
     @service.update_attribute(:helper_id, @helperid)
     respond_to do |format|
-        format.html {render :nothing => true}
+        format.html {redirect_to @service, notice: 'Service was successfully updated.'}
+        format.json {render :show, status: :ok, location: @service}
         format.js
     end
+  end
+
+  def show_partial
+    @service = Service.find(params[:service_id])
+    return render @service
   end
 
   def review
