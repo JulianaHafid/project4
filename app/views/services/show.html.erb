@@ -1,83 +1,18 @@
-<<<<<<< HEAD
-<div class="page-header">
-<h1 class="showpage">Service ID: <%= @service.id %></h1>
-<div class="col-md-12" >
-  <table class="table table-bordered table-hover">
 
-    <tr>
-      <th>Service Type</th>
-      <td><%= @service.service_type %></td>
-    </tr>
-    <tr>
-      <th>Seeker ID</th>
-      <td><%= @service.seeker_id %></td>
-    </tr>
-    <tr id="book">
-      <th>Helper ID</th>
-      <td><%= @service.helper_id %></td>
-    </tr>
-    <tr>
-      <th>Task Requested</th>
-      <td><%= @service.task_list %></td>
-    </tr>
-    <tr>
-      <th>Date Service Needed</th>
-      <td><%= @service.date_when_seek_help%></td>
-    </tr>
-  </table>
-</div>
-
-<div class="col-md-12">
-  <table class="table table-bordered table-hover">
-    <h3 class="showpage">We figure out, these matches your request</h3>
-    <thead>
-      <tr>
-        <th>Service ID</th>
-        <th>Services Offered</th>
-        <th>Date</th>
-        <th>Helper ID</th>
-        <th></th>
-        <th></th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <% @test.each do |service| %>
-          <tr>
-          <td><%= service.id%></td>
-          <td><%= service.task_list %></td>
-          <td><%= service.date_when_seek_help%></td>
-          <td><%= service.helper_id%></td>
-
-          <td><%= link_to 'Chat', service, class:"btn btn-sm btn-info" %></td>
-          <!-- <td><%= link_to 'Book', {:action => :book, :service_id => @service.id,:helper_id => service.helper_id},remote: true,id: "book", :method => :put, class:"btn btn-sm btn-success" %></td> -->
-          <td><%= link_to 'Book', {:action => :book, :service_id => @service.id,:helper_id => service.helper_id},remote: true, class:"btn btn-sm btn-success" %></td>
-        </tr>
-     <% end %>
-    </tbody>
-  </table>
-
-</div>
-
-
-  <%= link_to dashboard_index_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Back
-  <% end %>
-
-
-</div>
-=======
 <div class="show-services-table">
   <div class="col-md-12" >
     <table class="table table-bordered table-hover">
       <tr>
-        <th>Seeker ID</th>
-        <td><%= @service.seeker_id %></td>
+        <th>Service ID</th>
+        <td><%= @service.id%></td>
+      </tr>
+      <tr>
+        <th>Name of Requestor</th>
+        <td><%= @profile[0] %></td>
       </tr>
       <tr id="book">
-        <th>Helper ID</th>
-        <td><%= @service.helper_id %></td>
+        <th>Name of Helper</th>
+        <td><%= @profile1[0] %></td>
       </tr>
       <tr>
         <th>Task Requested</th>
@@ -108,6 +43,7 @@
       </thead>
       <tbody>
         <% @test.each do |service| %>
+
             <tr>
             <td><%= service.id%></td>
             <td><%= service.task_list %></td>
@@ -118,6 +54,7 @@
             <!-- <td><%= link_to 'Book', {:action => :book, :service_id => @service.id,:helper_id => service.helper_id},remote: true,id: "book", :method => :put, class:"btn btn-sm btn-success" %></td> -->
             <td><%= link_to 'Book', {:action => :book, :service_id => @service.id,:helper_id => service.helper_id},remote: true, class:"btn btn-sm btn-success" %></td>
           </tr>
+          
        <% end %>
       </tbody>
     </table>
@@ -128,8 +65,3 @@
     <span class="glyphicon glyphicon-chevron-left"></span>
     Back
   <% end %>
-  <%= link_to edit_service_path(@service), class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Edit
-  <% end %>
->>>>>>> b36f93afc9b85e79655c9191db99c89a20c92a5b

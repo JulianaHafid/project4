@@ -34,7 +34,8 @@
             </div>
             <div class="form-group">
               <legend>Avatar</legend>
-              <%= form.file_field :avatar %>
+              <% unless @profile.avatar_url.nil? %><%= image_tag @profile.avatar_url(:display) %><br /><% end %>
+              <%= form.file_field :avatar,id: :profile_gender %>
             </div>
         </section>
       </div>

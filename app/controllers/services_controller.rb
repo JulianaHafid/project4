@@ -10,9 +10,13 @@ class ServicesController < ApplicationController
   # GET /services/1
   # GET /services/1.json
   def show
-
-
     #Query for service you help and seek
+
+    #query to get the name from Profile table where seeker/helper id = user_id in Service table
+    @getservice = Service.find(params[:id])
+    @profile = Profile.where(user_id: @getservice.seeker_id).pluck(:name)
+    @profile1 = Profile.where(user_id: @getservice.helper_id).pluck(:name)
+
     # get from Service table where service type = "Offering Help"
     @test1 = Service.where("service_type ilike ?", "%Offering Help%")
     # get from Service table where id is what is passed in params"
@@ -22,9 +26,7 @@ class ServicesController < ApplicationController
     #from the results in the query @test0 , only display those with helper_id not equal to current user
     @test = @test0.where.not(helper_id: current_user)
 
-    #Query for Review
-
-
+    render layout: "empty"
   end
 
   # GET /services/new
@@ -48,7 +50,6 @@ class ServicesController < ApplicationController
     else @service.service_type === "offering help" || @service.service_type === "Offering Help"
       @service.helper_id = current_user.id
     end
-
     respond_to do |format|
       if @service.save
         format.html { redirect_to @service, notice: 'Service was successfully created.' }
@@ -91,24 +92,12 @@ class ServicesController < ApplicationController
     @service.rating_for_helper= params[:rating_for_helper]
     @service.save
       respond_to do |format|
-          format.html {render :nothing => true}
+          format.html {render layout: "empty", :nothing => true}
           format.js
       end
+
   end
 
-  # def reviewupdate
-  #   @service = Service.find(params[:id])
-  #   @helper= (params[:review_for_helper])
-  #   # @service.review_for_helper= params[:review_for_helper]
-  #   # @service.rating_for_helper= params[:rating_for_helper]
-  #   # puts "in review update"
-  #   # @service.save
-  #   # respond_to do |format|
-  #   #     format.html {render :nothing => true}
-  #   #     format.js
-  #   # end
-  #   #redirect_to dashboard_index_url
-  # end
 
   # DELETE /services/1
   # DELETE /services/1.json
