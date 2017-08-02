@@ -24,7 +24,7 @@ class ServicesController < ApplicationController
 
     #Query for Review
 
-    render layout: "show"
+
   end
 
   # GET /services/new
