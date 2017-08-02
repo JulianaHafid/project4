@@ -8,16 +8,20 @@
   font-variant: small-caps;
   font-size: 14px;
 }
+
 .profile_table th {
   font-size: 16px;
 }
+
 .avatar_picture {
   width: 100px;
   border-radius: 50%;
 }
+
 .table {
   width: 100%;
 }
+
 .profile-title {
   margin-top: 10px;
   margin-bottom: 100px;
@@ -25,16 +29,26 @@
   font-variant: small-caps;
   font-size: 18px;
 }
+
 td {
   vertical-align: middle;
 }
+
 th {
   text-align: center;
 }
-.profiles-new-form h1 {
+
+.profiles-new-form {
   font-weight: bold;
   font-variant: small-caps;
 }
+
 .form-group {
-  text-center: align;
+  display: block;
+  text-align: center;
+}
+
+.profiles-form-update-button {
+  display: inline-block;
+  text-align: center;
 }
