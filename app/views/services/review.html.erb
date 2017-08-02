@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   <h1>New service</h1>
   <h3>New service</h3>
 
@@ -45,6 +46,35 @@
         </tr>
     </table>
   </div> -->
+=======
+<div class="review-update-table">
+  <div class="col-md-12" >
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>Service Type</th>
+        <td><%= @service.service_type %></td>
+      </tr>
+      <tr>
+        <th>Seeker ID</th>
+        <td><%= @service.seeker_id %></td>
+      </tr>
+      <tr id="book">
+        <th>Helper ID</th>
+        <td><%= @service.helper_id %></td>
+      </tr>
+      <tr>
+        <th>Task Requested</th>
+        <td><%= @service.task_list %></td>
+      </tr>
+      <tr>
+        <th>Date Service Needed</th>
+        <td><%= @service.date_when_seek_help%></td>
+      </tr>
+    </table>
+  </div>
+</div>
+>>>>>>> b36f93afc9b85e79655c9191db99c89a20c92a5b
+
 
 
 <%= form_for @service do |f| %>
@@ -60,24 +90,30 @@
     </div>
   <% end %>
 
-  <h5>Post or update a review below</h5>
+<div class="review-title">
+  <h5>Post a review below</h5>
   <div class = "col-md-12">
-      <%= f.label :review_for_helper, class: "control-label" %>
+
       <%= f.text_area :review_for_helper,size: "20x8", class: "form-control" %>
   </div>
-  <div class = "col-md-1">
+  <div class = "col-md-offset-11 col-md-1">
      <%=f.label "Rating", class: "control-label"%>
      <%=f.select(:rating_for_helper,options_for_select([['1', 1],['2', 2],['3', 3],['4', 4],['5', 5]]),{include_blank: true})%>
   </div>
   <div class="form-group">
-    <div class="col-sm-offset-5 col-sm-7">
-      <%= f.submit class: "btn btn-primary" %>
+    <div class="update-service-button">
+      <%= f.submit class: "btn btn-success" %>
     </div>
   </div>
-
+</div>
 <% end %>
 
-</div>
+<br />
+
+<%= link_to dashboard_index_path, class: 'btn btn-default' do %>
+  <span class="glyphicon glyphicon-chevron-left"></span>
+  Back
+<% end %>
 
 
 <!-- <%= link_to 'Back', dashboard_index_path %> -->

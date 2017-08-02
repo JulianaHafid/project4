@@ -1,3 +1,9 @@
+.dashboard-container {
+  margin-top: 250px;
+  overflow: scroll;
+  height: auto;
+}
+
 .dashboard-avatar img {
   border-radius: 50%
 }
@@ -17,6 +23,11 @@
   font-weight: bold;
   font-variant: small-caps;
 }
+.dashboard-offers-wrapper {
+font-weight: bold;
+font-variant: small-caps;
+font-size: 16px;
+}
 .dashboard-offers-wrapper h3 {
   font-weight: bold;
   font-variant: small-caps;
@@ -25,10 +36,20 @@
   border-color: rgba(158,173,195,.16);
   background: #fff;
 }
+.dashboard-profile-wrapper {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 16px;
+}
 .dashboard-profile-wrapper h3 {
   font-weight: bold;
   font-variant: small-caps;
 }
+.dashboard-requests-wrapper {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 16px;
+}
 .dashboard-helpers-wrapper
 h3 {
   font-weight: bold;
@@ -52,4 +73,13 @@ h3 {
 table {
   border-color: rgba(158,173,195,.16);
   background: #fff;
+}
+.dashboard-reviews-wrapper h3 {
+  font-weight: bold;
+  font-variant: small-caps;
+}
+.dashboard-reviews-wrapper {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 16px;
 }
