@@ -61,7 +61,6 @@ $white: #fff;
 * {
   box-sizing: inherit;
   transition-property: all;
-  transition-duration: .6s;
   transition-timing-function: ease;
 }
 html,
@@ -128,7 +127,7 @@ p {
 //button styles
 //default button
 .btn {
-  color: #fff;
+  color: black;
   cursor: pointer;
   display: block;
   font-size:16px;

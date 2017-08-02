@@ -1,8 +1,11 @@
-<h2>Sign up</h2>
+<div class="users-signup-title">
+  <h2>Sign up</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+<div class="users-signup-fields">
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -20,10 +23,14 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+</div>
+<br />
 
+<div class="users-signup-button">
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class:"btn btn-small btn-default" %>
   </div>
 <% end %>
+</div>
 
 <%= render "devise/shared/links" %>
