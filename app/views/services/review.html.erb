@@ -1,9 +1,5 @@
   <h1>New service</h1>
-  <h1>New service</h1>
-<%= link_to dashboard_index_path, class: 'btn btn-default' do %>
-  <span class="glyphicon glyphicon-list-alt"></span>
-  Back
-<% end %>
+  <h3>New service</h3>
 
 <div class="col-md-12" >
   <table class="table table-bordered table-hover">
@@ -12,7 +8,7 @@
         <span class="glyphicon glyphicon-list-alt"></span>
         Back
       <% end %>
-      <h1>New service</h1>
+        <h1>Review and Rate the Helper</h1>
 
     <tr>
       <th>Service Type</th>
@@ -34,24 +30,21 @@
       <th>Date Service Needed</th>
       <td><%= @service.date_when_seek_help%></td>
     </tr>
-    <tr>
-      <th>Review for Helper</th>
-      <td><%=@service.review_for_helper%></td>
-    </tr>
-    <tr>
-      <th>Helper's Rating</th>
-      <td><%=@service.rating_for_helper%></td>
-    </tr>
-    <tr>
-      <th>Review for Requestor</th>
-      <td><%=@service.review_for_seeker%></td>
-    </tr>
-    <tr>
-      <th>Rating for Requestor</th>
-      <td><%=@service.rating_for_seeker%></td>
-    </tr>
   </table>
-</div>
+  </div>
+
+  <!-- <div>
+      <table class="table table-bordered table-hover">
+        <tr>
+          <th>Review for Helper</th>
+          <td id="review"><%=@service.review_for_helper%></td>
+        </tr>
+        <tr>
+          <th>Helper's Rating</th>
+          <td><%=@service.rating_for_helper%></td>
+        </tr>
+    </table>
+  </div> -->
 
 
 <%= form_for @service do |f| %>
