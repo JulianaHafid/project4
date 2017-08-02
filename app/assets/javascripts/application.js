@@ -14,6 +14,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
+
 //= require jquery.gridster.js
 //= require jquery.gridster.min.js
 //= require bootstrap

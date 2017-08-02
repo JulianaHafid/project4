@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #match 'dashboard/review/:id' => 'dashboard#review', :via => :put
   get 'services/review/:id' => 'services#review' , :as => "services_review"
 
+  
   get 'dashboard/index'
   get 'dashboard/match'
   get 'dashboard/seekers'

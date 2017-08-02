@@ -1,0 +1,40 @@
+.profile_table{
+  padding: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: rgba(158,173,195,.16);
+  background: #fff;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 14px;
+}
+.profile_table th {
+  font-size: 16px;
+}
+.avatar_picture {
+  width: 100px;
+  border-radius: 50%;
+}
+.table {
+  width: 100%;
+}
+.profile-title {
+  margin-top: 10px;
+  margin-bottom: 100px;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 18px;
+}
+td {
+  vertical-align: middle;
+}
+th {
+  text-align: center;
+}
+.profiles-new-form h1 {
+  font-weight: bold;
+  font-variant: small-caps;
+}
+.form-group {
+  text-center: align;
+}
