@@ -1,52 +1,4 @@
-<<<<<<< HEAD
-  <h1>New service</h1>
-  <h3>New service</h3>
 
-<div class="col-md-12" >
-  <table class="table table-bordered table-hover">
-    <div class="page-header">
-      <%= link_to dashboard_index_path, class: 'btn btn-default' do %>
-        <span class="glyphicon glyphicon-list-alt"></span>
-        Back
-      <% end %>
-        <h1>Review and Rate the Helper</h1>
-
-    <tr>
-      <th>Service Type</th>
-      <td><%= @service.service_type %></td>
-    </tr>
-    <tr>
-      <th>Seeker ID</th>
-      <td><%= @service.seeker_id %></td>
-    </tr>
-    <tr id="book">
-      <th>Helper ID</th>
-      <td><%= @service.helper_id %></td>
-    </tr>
-    <tr>
-      <th>Task Requested</th>
-      <td><%= @service.task_list %></td>
-    </tr>
-    <tr>
-      <th>Date Service Needed</th>
-      <td><%= @service.date_when_seek_help%></td>
-    </tr>
-  </table>
-  </div>
-
-  <!-- <div>
-      <table class="table table-bordered table-hover">
-        <tr>
-          <th>Review for Helper</th>
-          <td id="review"><%=@service.review_for_helper%></td>
-        </tr>
-        <tr>
-          <th>Helper's Rating</th>
-          <td><%=@service.rating_for_helper%></td>
-        </tr>
-    </table>
-  </div> -->
-=======
 <div class="review-update-table">
   <div class="col-md-12" >
     <table class="table table-bordered table-hover">
@@ -73,8 +25,6 @@
     </table>
   </div>
 </div>
->>>>>>> b36f93afc9b85e79655c9191db99c89a20c92a5b
-
 
 
 <%= form_for @service do |f| %>

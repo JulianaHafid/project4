@@ -10,7 +10,7 @@ class DashboardController < ApplicationController
     @review1 = Service.where(seeker_id: current_user)
     @review2 = @review1.where.not(helper_id: nil)
     @review = @review2.where("date_when_seek_help < ?", Date.today )
-
+    render layout: "dashboard"
   end
 
   def seekers
