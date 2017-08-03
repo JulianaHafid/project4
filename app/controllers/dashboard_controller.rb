@@ -39,12 +39,14 @@ class DashboardController < ApplicationController
   end
 
   def sendmail
-    # @user = User.new(params[:user])
-    # UserMailer.welcome_email(@user).deliver
-    # respond_to do |format|
-    #     format.html {render layout: "empty", :nothing => true}
-    #     format.js
-    #end
+    #@user = User.find(params[:id]
+    # UserMailer.notify(@user).deliver
+    # flash[:success] = "Email sent. Helper has been notified"
+    # redirect_to dashboard_index_path
+    respond_to do |format|
+      format.html { redirect_to dashboard_index_path, notice: "Email sent. Helper has been notified"}
+    end
+
   end
 
   def destroy

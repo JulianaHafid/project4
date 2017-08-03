@@ -49,7 +49,6 @@ class ServicesController < ApplicationController
   # POST /services.json
   def create
     @service = Service.new(service_params)
-
     if @service.service_type === "seeking Help" || @service.service_type === "Seeking Help"
       @service.seeker_id = current_user.id
     else @service.service_type === "offering help" || @service.service_type === "Offering Help"
@@ -116,18 +115,16 @@ class ServicesController < ApplicationController
   def destroy
     @service.destroy
     respond_to do |format|
-      format.html { redirect_to services_url, notice: 'Service was successfully destroyed.' }
+      format.html { redirect_to dashboard_index_path, notice: 'Service was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-
 
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_service
       @service = Service.find(params[:id])
-
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
