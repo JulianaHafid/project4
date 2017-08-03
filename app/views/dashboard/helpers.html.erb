@@ -1,2 +1,8 @@
+<% if user_signed_in? %>
+  <div id="helpers"><%= render 'helpers' %></div>
+<%else %>
+  <p>Please Sign Up or Sign In to view the content.</p>
 
-<div id="helpers"><%= render 'helpers' %></div>
+  <h2><%= link_to "Sign up", new_user_registration_path%>
+
+<% end %>
