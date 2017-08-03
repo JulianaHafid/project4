@@ -28,6 +28,7 @@ class DashboardController < ApplicationController
   def helpers
     if params[:search]
       #Find all record with service_type = "Seeking Help" and task_list meets the search string
+      @User = User.all
       @seeking = Service.where(service_type: "Offering Help")
       @search = @seeking.where("task_list ilike ?", "%#{params[:search]}%")
     else
@@ -36,6 +37,24 @@ class DashboardController < ApplicationController
     end
     render layout: "helpers"
   end
+
+  def sendmail
+    # @user = User.new(params[:user])
+    # UserMailer.welcome_email(@user).deliver
+    # respond_to do |format|
+    #     format.html {render layout: "empty", :nothing => true}
+    #     format.js
+    #end
+  end
+
+  def destroy
+    @service.destroy
+    respond_to do |format|
+      format.html { redirect_to services_url, notice: 'Service was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

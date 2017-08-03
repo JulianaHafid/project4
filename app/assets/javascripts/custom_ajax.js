@@ -45,21 +45,20 @@ $('.datepicker').datepicker({
     format: 'dd/mm/yyyy'
 });
 
-$(document).ready(function() {
-
-  setInterval(function() {
-
-      $.ajax({
-          type: 'GET',
-          url: '<%= url_for(:action => 'show_partial', :id => @service) %>',
-          data: {},
-          cache: false,
-          success: function(result) {
-              $('#book').html(result)
-          }
-      });
-
-
-  }, 2000);
-
-});
+// $(document).ready(function() {
+//
+//   setInterval(function() {
+//
+//       $.ajax({
+//           type: 'GET',
+//           url: '<%= url_for(:action => 'show_partial', :id => @service) %>',
+//           data: {},
+//           cache: false,
+//           success: function(result) {
+//               $('#book').html(result)
+//           }
+//       });
+//
+//   }, 2000);
+//
+// });

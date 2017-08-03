@@ -20,7 +20,8 @@
         <td><%= service.task_list %></td>
         <td><%= service.date_when_seek_help %></td>
         <td><%= service.service_type %></td>
-        <td><%= link_to 'Contact', service, class:"btn btn-sm btn-info" %></td>
+        <td><%= id = service.helper_id %></td>
+        <td><%= link_to 'Contact', dashboard_sendmail_path, class:"btn btn-sm btn-info" %></td>
       </tr>
     <% end %>
   </tbody>

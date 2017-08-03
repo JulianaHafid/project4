@@ -19,12 +19,23 @@
         <td><%= @service.task_list %></td>
       </tr>
       <tr>
-        <th>Date Service Needed</th>
+        <th>Date Service Needed (yyyy-mm-dd)</th>
         <td><%= @service.date_when_seek_help%></td>
+      </tr>
+      <tr>
+        <th>Review for Helper</th>
+        <td><%= @service.review_for_helper%></td>
+      </tr>
+      <tr>
+        <th>Rating</th>
+        <td><%=@service.rating_for_helper%></td>
       </tr>
     </table>
   </div>
 </div>
+
+
+<% if(!@profile1[0]) %>
 
 <div class="show-matches-table">
   <div class="col-md-12">
@@ -34,7 +45,6 @@
         <tr>
           <th>Service ID</th>
           <th>Services Offered</th>
-          <th>Date</th>
           <th>Helper ID</th>
           <!-- <th></th> -->
           <th></th>
@@ -43,23 +53,21 @@
       </thead>
       <tbody>
         <% @test.each do |service| %>
-      
             <tr>
             <td><%= service.id%></td>
             <td><%= service.task_list %></td>
-            <td><%= service.date_when_seek_help%></td>
             <td><%= service.helper_id%></td>
-
             <!-- <td><%= link_to 'Chat', service, class:"btn btn-sm btn-info" %></td> -->
             <!-- <td><%= link_to 'Book', {:action => :book, :service_id => @service.id,:helper_id => service.helper_id},remote: true,id: "book", :method => :put, class:"btn btn-sm btn-success" %></td> -->
             <td><%= link_to 'Book', {:action => :book, :service_id => @service.id,:helper_id => service.helper_id},remote: true, class:"btn btn-sm btn-success" %></td>
           </tr>
-
        <% end %>
       </tbody>
     </table>
   </div>
 </div>
+
+<% end %>
 
   <%= link_to dashboard_index_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-chevron-left"></span>

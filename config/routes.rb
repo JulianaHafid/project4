@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'dashboard/helpers'
   # namespace :dashboard do
   #   resources :seekers
-  #
+ get 'dashboard/sendmail' => 'dashboard#sendmail'
   #
   # end
   get 'static/index'

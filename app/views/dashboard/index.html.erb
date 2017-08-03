@@ -123,9 +123,8 @@
             <tr>
               <td><%= service.task_list %></td>
               <td><%= service.date_when_seek_help %></td>
-              <td><%= link_to 'Match', service, class:"btn btn-sm btn-info" %></td>
               <td><%= link_to 'Edit', edit_service_path(service), class:"btn btn-sm btn-success" %></td>
-              <td><%= link_to 'Remove', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %></td>
+              <td><%= link_to 'Delete', service, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-danger" %></td>
             </tr>
             <% end %>
           </tbody>

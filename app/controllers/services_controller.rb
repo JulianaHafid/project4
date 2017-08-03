@@ -26,12 +26,17 @@ class ServicesController < ApplicationController
     #from the results in the query @test0 , only display those with helper_id not equal to current user
     @test = @test0.where.not(helper_id: current_user)
 
+    #@ads = Ad.all(:joins => 'LEFT JOIN states ON ads.state_id = states.id')
+    #@ads = @test(:joins => 'LEFT JOIN states ON @test.helper_id = profiles.user_id')
+    #@ads = Service.all(:joins => 'LEFT JOIN profiles ON #{services.helper_id = profiles.user_id}')
+    #@service1 = Profile.includes(:service).where(:service => { helper_id: user_id } ).all
     render layout: "empty"
   end
 
   # GET /services/new
   def new
     @service = Service.new
+    render layout: "empty"
   end
 
   # GET /services/1/edit
@@ -52,7 +57,7 @@ class ServicesController < ApplicationController
     end
     respond_to do |format|
       if @service.save
-        format.html { redirect_to @service, notice: 'Service was successfully created.' }
+        format.html { redirect_to @service, layout: "empty", notice: 'Service was successfully created.' }
         format.json { render :show, status: :created, location: @service }
       else
         format.html { render :new }
@@ -66,7 +71,7 @@ class ServicesController < ApplicationController
   def update
     respond_to do |format|
       if @service.update(service_params)
-        format.html { redirect_to @service, notice: 'Service was successfully updated.' }
+        format.html { redirect_to @service, layout: "empty", notice: 'Service was successfully updated.' }
         format.json { render :show, status: :ok, location: @service }
       else
         format.html { render :edit }
@@ -75,6 +80,7 @@ class ServicesController < ApplicationController
     end
   end
 
+  #when booking button click to book helpers
   def book
     @service = Service.find(params[:service_id])
     @helperid = params[:helper_id]
@@ -86,6 +92,7 @@ class ServicesController < ApplicationController
     end
   end
 
+  #AJAX call to auto refresh page, rerender the show page
   def show_partial
     @service = Service.find(params[:service_id])
     return render @service
@@ -101,7 +108,6 @@ class ServicesController < ApplicationController
           format.html {render layout: "empty", :nothing => true}
           format.js
       end
-
   end
 
 
