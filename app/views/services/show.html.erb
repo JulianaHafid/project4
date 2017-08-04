@@ -58,7 +58,6 @@
             <td><%= service.task_list %></td>
             <td><%= service.helper_id%></td>
             <!-- <td><%= link_to 'Chat', service, class:"btn btn-sm btn-info" %></td> -->
-            <!-- <td><%= link_to 'Book', {:action => :book, :service_id => @service.id,:helper_id => service.helper_id},remote: true,id: "book", :method => :put, class:"btn btn-sm btn-success" %></td> -->
             <td><%= link_to 'Book', {:action => :book, :service_id => @service.id,:helper_id => service.helper_id},remote: true, class:"btn btn-sm btn-success" %></td>
           </tr>
        <% end %>
@@ -66,7 +65,6 @@
     </table>
   </div>
 </div>
-
 <% end %>
 
   <%= link_to dashboard_index_path, class: 'btn btn-default' do %>

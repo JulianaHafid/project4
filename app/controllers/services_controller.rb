@@ -26,10 +26,6 @@ class ServicesController < ApplicationController
     #from the results in the query @test0 , only display those with helper_id not equal to current user
     @test = @test0.where.not(helper_id: current_user)
 
-    #@ads = Ad.all(:joins => 'LEFT JOIN states ON ads.state_id = states.id')
-    #@ads = @test(:joins => 'LEFT JOIN states ON @test.helper_id = profiles.user_id')
-    #@ads = Service.all(:joins => 'LEFT JOIN profiles ON #{services.helper_id = profiles.user_id}')
-    #@service1 = Profile.includes(:service).where(:service => { helper_id: user_id } ).all
     render layout: "empty"
   end
 
